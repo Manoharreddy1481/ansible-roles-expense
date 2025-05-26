@@ -1,27 +1,23 @@
-- name: installing nginx
+- name: install nginx server
   ansible.builtin.package:
     name: nginx
-    state: installed
-- name: start and enable nginx
+    state: present
+- name: start nginx server
   ansible.builtin.service:
     name: nginx
     state: started
     enabled: yes
-- name: import the roles from common
+
+- name: import tasks from common role
   ansible.builtin.import_role:
     name: common
     tasks_from: main
 
-- name: extract the code
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip #by default ansible thinks this is in ansible server
-    dest: /usr/share/nginx/html
-    remote_src: yes
-- name: copy the conf file
+- name: copy expense conf
   ansible.builtin.template:
     src: expense.conf.j2
     dest: /etc/nginx/default.d/expense.conf
-  notify:
+  notify: 
   - Restart nginx
 
 # - name: restart nginx
