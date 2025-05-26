@@ -1,4 +1,4 @@
-mysql_root_password: "ExpenseApp@1"
-mysql_host_address: "mysql.manohar.fun"
+# mysql_root_password: "ExpenseApp@1"
+# mysql_host_address: "mysql.manohar.fun"
 app_location: /app
 component: backend
