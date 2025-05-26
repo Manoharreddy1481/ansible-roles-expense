@@ -13,7 +13,7 @@
   ansible.builtin.user:
     name: expense
 - name: import tasks from common role
-  anisble.builtin.import_role:
+  ansible.builtin.import_role:
     name: common
     tasks_from: main
 - name: install dependencies
