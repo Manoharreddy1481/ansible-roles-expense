@@ -7,8 +7,8 @@
     name: nginx
     state: started
     enabled: yes
-- name: import the roles form common
-  ansible.builtin.import_roles:
+- name: import the roles from common
+  ansible.builtin.import_role:
     name: common
     tasks_from: main
 
